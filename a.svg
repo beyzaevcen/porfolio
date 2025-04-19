@@ -1,0 +1,174 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <!-- Background with gradient -->
+  <rect width="400" height="400" fill="#f0e6ff" rx="20" ry="20"/>
+  
+  <!-- Decorative elements - flowers -->
+  <g id="flowers">
+    <!-- Flower 1 -->
+    <circle cx="50" cy="350" r="15" fill="#d4bbff"/>
+    <circle cx="40" cy="340" r="10" fill="#d4bbff"/>
+    <circle cx="60" cy="340" r="10" fill="#d4bbff"/>
+    <circle cx="40" cy="360" r="10" fill="#d4bbff"/>
+    <circle cx="60" cy="360" r="10" fill="#d4bbff"/>
+    <circle cx="50" cy="350" r="8" fill="#ffe566"/>
+
+    <!-- Flower 2 -->
+    <circle cx="350" cy="350" r="15" fill="#d4bbff"/>
+    <circle cx="340" cy="340" r="10" fill="#d4bbff"/>
+    <circle cx="360" cy="340" r="10" fill="#d4bbff"/>
+    <circle cx="340" cy="360" r="10" fill="#d4bbff"/>
+    <circle cx="360" cy="360" r="10" fill="#d4bbff"/>
+    <circle cx="350" cy="350" r="8" fill="#ffe566"/>
+  </g>
+
+  <!-- Grass silhouette -->
+  <path d="M0,380 Q50,350 100,380 Q150,350 200,380 Q250,350 300,380 Q350,350 400,380 L400,400 L0,400 Z" fill="#c9b3ff"/>
+
+  <!-- Butterfly Group - Everything will animate together -->
+  <g id="butterfly">
+    <!-- Main animation: gentle floating -->
+    <animateTransform 
+      attributeName="transform" 
+      type="translate" 
+      values="0,0; 0,-10; 0,0" 
+      dur="3s" 
+      repeatCount="indefinite"/>
+
+    <!-- Wings animation: flapping -->
+    <g id="wings">
+      <animateTransform 
+        attributeName="transform" 
+        type="scale" 
+        values="1,1; 1.05,1; 1,1" 
+        dur="1s" 
+        repeatCount="indefinite" 
+        additive="sum"/>
+
+      <!-- Upper Left Wing -->
+      <path d="M200,200 C150,150 100,130 120,180 C90,130 120,80 150,100 C175,60 200,100 200,140 Z" fill="#9966cc">
+        <animate attributeName="fill" values="#9966cc;#aa77dd;#9966cc" dur="4s" repeatCount="indefinite"/>
+      </path>
+      
+      <!-- Upper Right Wing (mirror of left) -->
+      <path d="M200,200 C250,150 300,130 280,180 C310,130 280,80 250,100 C225,60 200,100 200,140 Z" fill="#8a56cc">
+        <animate attributeName="fill" values="#8a56cc;#9966dd;#8a56cc" dur="4s" repeatCount="indefinite"/>
+      </path>
+      
+      <!-- Lower Left Wing -->
+      <path d="M200,200 C150,250 100,270 120,220 C90,270 120,320 150,300 C175,340 200,300 200,260 Z" fill="#7d4bbd">
+        <animate attributeName="fill" values="#7d4bbd;#8a56cc;#7d4bbd" dur="4s" repeatCount="indefinite"/>
+      </path>
+      
+      <!-- Lower Right Wing (mirror of left) -->
+      <path d="M200,200 C250,250 300,270 280,220 C310,270 280,320 250,300 C225,340 200,300 200,260 Z" fill="#6c3eb8">
+        <animate attributeName="fill" values="#6c3eb8;#7d4bbd;#6c3eb8" dur="4s" repeatCount="indefinite"/>
+      </path>
+
+      <!-- Wing Patterns - Spots -->
+      <circle cx="150" cy="140" r="8" fill="#ffffff" opacity="0.7"/>
+      <circle cx="250" cy="140" r="8" fill="#ffffff" opacity="0.7"/>
+      <circle cx="130" cy="180" r="6" fill="#ffffff" opacity="0.7"/>
+      <circle cx="270" cy="180" r="6" fill="#ffffff" opacity="0.7"/>
+      <circle cx="150" cy="260" r="8" fill="#ffffff" opacity="0.7"/>
+      <circle cx="250" cy="260" r="8" fill="#ffffff" opacity="0.7"/>
+      <circle cx="130" cy="220" r="6" fill="#ffffff" opacity="0.7"/>
+      <circle cx="270" cy="220" r="6" fill="#ffffff" opacity="0.7"/>
+    </g>
+
+    <!-- Body -->
+    <g id="body">
+      <!-- Main Body -->
+      <ellipse cx="200" cy="200" rx="10" ry="40" fill="#5d31a8"/>
+      
+      <!-- Head -->
+      <circle cx="200" cy="150" r="15" fill="#6c3eb8"/>
+      
+      <!-- Cute Face -->
+      <!-- Eyes -->
+      <circle cx="195" cy="145" r="4" fill="white"/>
+      <circle cx="205" cy="145" r="4" fill="white"/>
+      <circle cx="195" cy="145" r="2" fill="black"/>
+      <circle cx="205" cy="145" r="2" fill="black"/>
+      
+      <!-- Smile -->
+      <path d="M195,155 Q200,160 205,155" stroke="black" stroke-width="1.5" fill="none"/>
+      
+      <!-- Blush -->
+      <circle cx="188" cy="152" r="3" fill="#ff9999" opacity="0.5"/>
+      <circle cx="212" cy="152" r="3" fill="#ff9999" opacity="0.5"/>
+      
+      <!-- Antennae -->
+      <path d="M195,135 Q185,120 190,110" stroke="#5d31a8" stroke-width="2" fill="none">
+        <animate attributeName="d" values="M195,135 Q185,120 190,110; M195,135 Q190,118 195,105; M195,135 Q185,120 190,110" dur="3s" repeatCount="indefinite"/>
+      </path>
+      <circle cx="190" cy="110" r="4" fill="#b088ff"/>
+      
+      <path d="M205,135 Q215,120 210,110" stroke="#5d31a8" stroke-width="2" fill="none">
+        <animate attributeName="d" values="M205,135 Q215,120 210,110; M205,135 Q210,118 205,105; M205,135 Q215,120 210,110" dur="3s" repeatCount="indefinite" begin="0.5s"/>
+      </path>
+      <circle cx="210" cy="110" r="4" fill="#b088ff"/>
+    </g>
+
+    <!-- Sparkles around butterfly -->
+    <g id="sparkles">
+      <circle cx="240" cy="130" r="2" fill="white">
+        <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite" begin="0.3s"/>
+      </circle>
+      <circle cx="160" cy="130" r="2" fill="white">
+        <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite" begin="1.1s"/>
+      </circle>
+      <circle cx="260" cy="200" r="2" fill="white">
+        <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite" begin="0.7s"/>
+      </circle>
+      <circle cx="140" cy="200" r="2" fill="white">
+        <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite" begin="1.5s"/>
+      </circle>
+      <circle cx="230" cy="240" r="2" fill="white">
+        <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite" begin="0.2s"/>
+      </circle>
+      <circle cx="170" cy="240" r="2" fill="white">
+        <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite" begin="1.3s"/>
+      </circle>
+    </g>
+  </g>
+
+  <!-- Clouds -->
+  <g id="cloud1" opacity="0.7">
+    <ellipse cx="80" cy="80" rx="30" ry="20" fill="white"/>
+    <ellipse cx="65" cy="75" rx="20" ry="15" fill="white"/>
+    <ellipse cx="95" cy="75" rx="20" ry="15" fill="white"/>
+    <animateTransform 
+      attributeName="transform" 
+      type="translate" 
+      values="0,0; 20,0; 0,0" 
+      dur="20s" 
+      repeatCount="indefinite"/>
+  </g>
+  
+  <g id="cloud2" opacity="0.7">
+    <ellipse cx="320" cy="60" rx="30" ry="20" fill="white"/>
+    <ellipse cx="305" cy="55" rx="20" ry="15" fill="white"/>
+    <ellipse cx="335" cy="55" rx="20" ry="15" fill="white"/>
+    <animateTransform 
+      attributeName="transform" 
+      type="translate" 
+      values="0,0; -20,0; 0,0" 
+      dur="25s" 
+      repeatCount="indefinite"/>
+  </g>
+
+  <!-- Small heart floating up -->
+  <path d="M120,250 a10,10 0 0,1 20,0 a10,10 0 0,1 20,0 q0,20 -20,30 q-20,-10 -20,-30" fill="#ff99cc" opacity="0.6">
+    <animateTransform 
+      attributeName="transform" 
+      type="translate" 
+      values="0,0; 20,-80; 40,-160" 
+      dur="15s" 
+      repeatCount="indefinite"/>
+    <animate 
+      attributeName="opacity" 
+      values="0.6;0.3;0" 
+      dur="15s" 
+      repeatCount="indefinite"/>
+  </path>
+</svg>
